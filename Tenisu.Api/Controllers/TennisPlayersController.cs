@@ -1,9 +1,12 @@
+using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Tenisu.Application.TennisPlayers.Queries.ListTennisPlayers;
 using Tenisu.Domain.TennisPlayerAggregate;
 
 namespace Tenisu.Api.Controllers;
 
+[Route("players")]
 public class TennisPlayersController : ApiController
 {
     private ISender _sender;
@@ -13,16 +16,20 @@ public class TennisPlayersController : ApiController
         _sender = sender;
     }
 
-    //Get all endpoint
+    //TODO Get all endpoint
+    
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        
-        List<TennisPlayer> result = await _sender.Send();
+        ListTennisPlayersQuery query = new ListTennisPlayersQuery();
+        ErrorOr<List<TennisPlayer>> result = await _sender.Send(query);
         return Ok();
     }
-    //Get by id endpoint 
-    //Get mixte information statistics 
+    
+    //TODO Get by id endpoint
+    
+    
+    //TODO Get mixte information statistics 
         //country that have the better player rank 
         //medium IMC of all players
         //mediane of player's height 
