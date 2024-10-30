@@ -2,3 +2,6 @@
 .DS_Store
 obj
 bin 
+*.db
+*.db-shm
+*.db-wal

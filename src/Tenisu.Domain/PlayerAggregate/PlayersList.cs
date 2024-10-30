@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Tenisu.Domain.TennisPlayerAggregate;
+namespace Tenisu.Domain.PlayerAggregate;
 
 public class PlayersList
 {    

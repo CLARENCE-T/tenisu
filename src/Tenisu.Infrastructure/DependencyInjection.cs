@@ -2,7 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tenisu.Application.Common.Interfaces;
+using Tenisu.Infrastructure.Common;
 using Tenisu.Infrastructure.Persistence;
+using Tenisu.Infrastructure.Persistence.Configurations;
 using Tenisu.Infrastructure.Persistence.Repositories;
 
 namespace Tenisu.Infrastructure;
@@ -22,7 +24,10 @@ public static class DependencyInjection
         services.AddDbContext<TenisuDbContext>(options =>
             options.UseSqlite("Data Source = GymManagement.db"));
 
-        services.AddScoped<ITennisPlayersRepository, TennisPlayersRepository>();
+        services.AddScoped<DatabaseInitializer>();
+        services.AddSingleton<JsonParser>();
+        services.AddScoped<IPlayersRepository, PlayersRepository>();
+        
 
         return services;
     }

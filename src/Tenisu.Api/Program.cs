@@ -1,5 +1,7 @@
 using Tenisu.Application;
 using Tenisu.Infrastructure;
+using Tenisu.Infrastructure.Persistence;
+using Tenisu.Infrastructure.Persistence.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,9 +22,25 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection();
+try
+{
+    var scope = app.Services.CreateScope();
+    var context = scope.ServiceProvider.GetRequiredService<TenisuDbContext>();
 
-app.UseAuthorization();
+    await context.Database.EnsureDeletedAsync();
+    await context.Database.EnsureCreatedAsync();
+
+    var seeder = scope.ServiceProvider.GetRequiredService<DatabaseInitializer>();
+    await seeder.SeedAsync();   
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"An error occurred: {ex.Message}");
+}
+
+app.UseHttpsRedirection();
+
+    app.UseAuthorization();
 
 app.MapControllers();
 
