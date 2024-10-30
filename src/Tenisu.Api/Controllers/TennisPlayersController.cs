@@ -22,11 +22,14 @@ public class TennisPlayersController : ApiController
     public async Task<IActionResult> GetAll()
     {
         ListTennisPlayersQuery query = new ListTennisPlayersQuery();
-        ErrorOr<List<TennisPlayer>> result = await _sender.Send(query);
-        return Ok();
+        ErrorOr<List<Player>> result = await _sender.Send(query);
+        if (result.IsError)
+            return NotFound();
+        return Ok(result.Value);
     }
     
     //TODO Get by id endpoint
+    
     
     
     //TODO Get mixte information statistics 

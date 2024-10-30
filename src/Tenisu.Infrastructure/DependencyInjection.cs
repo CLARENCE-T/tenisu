@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tenisu.Application.Common.Interfaces;
 using Tenisu.Infrastructure.Persistence;
-using Tenisu.Infrastructure.TennisPlayers.Persistence;
+using Tenisu.Infrastructure.Persistence.Repositories;
 
 namespace Tenisu.Infrastructure;
 

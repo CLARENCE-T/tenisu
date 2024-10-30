@@ -1,25 +1,28 @@
+using System.Text.Json.Serialization;
 using Tenisu.Domain.Common;
 
 namespace Tenisu.Domain.TennisPlayerAggregate;
 
-public class TennisPlayer : Entity
+public class Player : Entity
 {
     public string Firstname { get; private init; }
     
-    public string Lastname { get; private init; }
+    public string Lastname { get; private set; }
     
-    public string Shortname { get; private init; }
+    public string Shortname { get; private set; }
     
-    public string Sex { get; private init; }
+    public string Sex { get; private set; }
     
-    public Country Country { get; private init; }
+    public Country Country { get; private set; }
     
-    public string PictureUrl { get; private init; }
+    [JsonPropertyName("picture")]
+    public string PictureUrl { get; private set; }
 
-    public TennisPlayerInformation Information { get; private init; }
+    [JsonPropertyName("data")]
+    public PlayerInformation Information { get; private set; }
 
-    public TennisPlayer(int id, string firstname, string lastname, string shortname, string sex, Country country,
-        string pictureUrl, TennisPlayerInformation information) : base(id)
+    public Player(int id, string firstname, string lastname, string shortname, string sex, Country country,
+        string pictureUrl, PlayerInformation information) : base(id)
     {
         Firstname = firstname ?? throw new ArgumentNullException(nameof(firstname));
         Lastname = lastname ?? throw new ArgumentNullException(nameof(lastname));

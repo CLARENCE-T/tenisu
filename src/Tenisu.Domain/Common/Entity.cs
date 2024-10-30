@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Tenisu.Domain.Common;
 
 public abstract class Entity

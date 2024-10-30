@@ -5,6 +5,6 @@ namespace Tenisu.Application.Common.Interfaces;
 
 public interface ITennisPlayersRepository
 {
-    Task<ErrorOr<List<TennisPlayer>>> ListAllAsync();
+    Task<ErrorOr<List<Player>>> ListAllAsync();
 
 }

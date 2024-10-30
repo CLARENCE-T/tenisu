@@ -6,7 +6,7 @@ namespace Tenisu.Infrastructure.Persistence;
 
 public class TenisuDbContext : DbContext
 {
-    public DbSet<TennisPlayer> TennisPlayers { get; set; } = null!;
+    public DbSet<Player> TennisPlayers { get; set; } = null!;
 
     public TenisuDbContext(DbContextOptions options) : base(options)
     {
