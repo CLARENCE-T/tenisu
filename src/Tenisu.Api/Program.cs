@@ -38,9 +38,8 @@ catch (Exception ex)
     Console.WriteLine($"An error occurred: {ex.Message}");
 }
 
-app.UseHttpsRedirection();
-
-    app.UseAuthorization();
+// app.UseHttpsRedirection();
+app.UseAuthorization();
 
 app.MapControllers();
 
