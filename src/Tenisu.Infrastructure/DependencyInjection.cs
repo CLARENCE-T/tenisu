@@ -24,9 +24,9 @@ public static class DependencyInjection
         services.AddDbContext<TenisuDbContext>(options =>
             options.UseSqlite("Data Source = GymManagement.db"));
 
+        services.AddScoped<IPlayersRepository, PlayersRepository>();
         services.AddScoped<DatabaseInitializer>();
         services.AddSingleton<JsonParser>();
-        services.AddScoped<IPlayersRepository, PlayersRepository>();
         
 
         return services;

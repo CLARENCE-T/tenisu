@@ -4,15 +4,15 @@ namespace Tenisu.Domain;
 
 public class PlayerInformation : Entity
 {
-    public int Rank { get;  init; }
+    public int Rank { get;  set; }
     
-    public int Points { get;  init; }
+    public int Points { get;  set; }
     
-    public int Weight { get;  init; }
+    public int Weight { get;  set; }
     
-    public int Height { get;  init; }
+    public int Height { get;  set; }
     
-    public int Age { get;  init; }
+    public int Age { get;  set; }
     public List<int> Last { get; set; } = new List<int>(); 
     
 }

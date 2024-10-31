@@ -15,9 +15,9 @@ public class Player : Entity
 
     public Country Country { get;  set; }
 
-    public int CountryId { get; set; }
+    public int CountryId { get; init; }
     
-    public int InformationId { get; set; }
+    public int InformationId { get; init; }
     
     public string Picture { get;  set; }
 

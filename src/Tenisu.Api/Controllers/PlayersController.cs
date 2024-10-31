@@ -29,10 +29,11 @@ public class PlayersController(ISender sender) : ApiController
     public async Task<IActionResult> GetById([FromRoute] int id)
     {
         GetPlayerQuery query = new(id);
-        var result = sender.Send(query);
+        var result = await sender.Send(query);
         
-        // if (result.IsError) return NotFound();
-        //
-        return Ok(result.Result.Value);
+        if (result.IsError) 
+            return Problem(result.Errors.ToString());
+        
+        return Ok(result.Value);
     }
 }

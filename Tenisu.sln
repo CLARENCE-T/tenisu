@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{33932683-B28F-4BBF-BA03-4C66613FD3EE}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tenisu.Domain", "src\Tenisu.Domain\Tenisu.Domain.csproj", "{48A840AE-EE7D-4E2F-9429-C6B75416EC33}"
 EndProject
@@ -17,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tenisu.Domain.UnitTests", "tests\UnitTests\Tenisu.Domain.UnitTests\Tenisu.Domain.UnitTests.csproj", "{27F90D0C-AE9D-4287-A870-51199FBB71EE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tenisu.Contracts", "src\Tenisu.Contracts\Tenisu.Contracts.csproj", "{37B40616-5BB9-4AE1-A71F-980F711D83EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tenisu.Infrastructure.UnitTests", "tests\UnitTests\Tenisu.Infrastructure.UnitTests\Tenisu.Infrastructure.UnitTests.csproj", "{3BC57129-B952-4DE7-B0B2-58B978A9801D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +53,10 @@ Global
 		{37B40616-5BB9-4AE1-A71F-980F711D83EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37B40616-5BB9-4AE1-A71F-980F711D83EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37B40616-5BB9-4AE1-A71F-980F711D83EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC57129-B952-4DE7-B0B2-58B978A9801D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC57129-B952-4DE7-B0B2-58B978A9801D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC57129-B952-4DE7-B0B2-58B978A9801D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC57129-B952-4DE7-B0B2-58B978A9801D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{48A840AE-EE7D-4E2F-9429-C6B75416EC33} = {33932683-B28F-4BBF-BA03-4C66613FD3EE}
@@ -57,5 +66,6 @@ Global
 		{1D294907-394A-4765-82D5-C2A00743C4E4} = {9C94B6F0-9517-4F8E-B4F5-78C7E90480C1}
 		{27F90D0C-AE9D-4287-A870-51199FBB71EE} = {1D294907-394A-4765-82D5-C2A00743C4E4}
 		{37B40616-5BB9-4AE1-A71F-980F711D83EF} = {33932683-B28F-4BBF-BA03-4C66613FD3EE}
+		{3BC57129-B952-4DE7-B0B2-58B978A9801D} = {1D294907-394A-4765-82D5-C2A00743C4E4}
 	EndGlobalSection
 EndGlobal

@@ -10,10 +10,12 @@ public class StatisticsController(ISender sender) : ApiController
     [HttpGet(ApiEndpoints.Statistics.GetMixedStatistics)]
     public async Task<IActionResult> GetMixedStatistics()
     {
-        //country that have the better player rank
         GetMixedStatisticsQuery query = new();
         
         var result= await sender.Send(query);
+        
+        if (result.IsError) 
+            return Problem(result.Errors.ToString());
 
         return Ok(result.Value);
     }

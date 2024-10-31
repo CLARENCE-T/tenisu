@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Tenisu.Application;
 using Tenisu.Infrastructure;
 using Tenisu.Infrastructure.Persistence;
@@ -27,9 +28,8 @@ try
     var scope = app.Services.CreateScope();
     var context = scope.ServiceProvider.GetRequiredService<TenisuDbContext>();
 
-    await context.Database.EnsureDeletedAsync();
-    await context.Database.EnsureCreatedAsync();
-
+    await context.Database.MigrateAsync();
+    // seed database from json file
     var seeder = scope.ServiceProvider.GetRequiredService<DatabaseInitializer>();
     await seeder.SeedAsync();   
 }
