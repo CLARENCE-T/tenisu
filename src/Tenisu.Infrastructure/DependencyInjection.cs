@@ -11,22 +11,23 @@ namespace Tenisu.Infrastructure;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfigurationBuilder configuration)
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         return services
-            .AddPersistence();
+            .AddPersistence(configuration);
     }
 
-    public static IServiceCollection AddPersistence(this IServiceCollection services)
+    public static IServiceCollection AddPersistence(this IServiceCollection services,IConfiguration configuration)
     {
         //TODO: add path of json file
-        
+        var jsonFilePath = configuration["JsonFilePath"];
+
         services.AddDbContext<TenisuDbContext>(options =>
             options.UseSqlite("Data Source = GymManagement.db"));
 
         services.AddScoped<IPlayersRepository, PlayersRepository>();
         services.AddScoped<DatabaseInitializer>();
-        services.AddSingleton<JsonParser>();
+        services.AddSingleton<JsonParser>(provider => new JsonParser(jsonFilePath));
         
 
         return services;
