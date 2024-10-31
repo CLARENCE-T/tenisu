@@ -38,3 +38,7 @@ Une fois l'application démarrée, ouvrez un navigateur et allez à l'adresse su
 
 
 http://localhost:5032/swagger/index.html
+
+
+L'application est aussi en ligne sur Render et dockerisé.
+https://tenisu-1xzw.onrender.com/swagger/index.html
