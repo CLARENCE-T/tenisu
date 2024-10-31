@@ -18,6 +18,7 @@ COPY . .
 WORKDIR /src/src/Tenisu.Api
 RUN dotnet publish -c Release -o /app/publish
 
+ENV ASPNETCORE_URLS=http://0.0.0.0:80
 ENV ASPNETCORE_ENVIRONMENT=Production
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
