@@ -23,6 +23,7 @@ var app = builder.Build();
     app.UseSwaggerUI();
 // }
 
+
 try
 {
     var scope = app.Services.CreateScope();
