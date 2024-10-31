@@ -18,7 +18,7 @@ RUN dotnet restore
 # Copier tous les fichiers de chaque projet, y compris le fichier JSON
 COPY . .
 
-# Publier le projet API (Tenisu.Api)
+# Publier le projet API  (Tenisu.Api)
 WORKDIR /src/src/Tenisu.Api
 RUN dotnet publish -c Release -o /app/publish
 
