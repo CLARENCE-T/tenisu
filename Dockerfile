@@ -15,7 +15,6 @@ RUN dotnet restore
 
 COPY . .
 
-WORKDIR /src/src/Tenisu.Api
 RUN dotnet publish -c Release -o /app/publish
 
 ENV ASPNETCORE_URLS=http://0.0.0.0:80
@@ -25,7 +24,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
 
-COPY src/Tenisu.Infrastructure/Persistence/headtohead.json /app/Persistence/headtohead.json
+COPY src/Tenisu.Infrastructure/Persistence/headtohead.json /app/headtohead.json
+COPY src/Tenisu.Api/Properties/appsettings.Production.json /app/appsettings.Production.json
 
 EXPOSE 80
 

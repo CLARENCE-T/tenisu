@@ -1,18 +1,26 @@
 using System.Text.Json;
 using ErrorOr;
+using Microsoft.Extensions.Configuration;
 using Tenisu.Domain.PlayerAggregate;
 
 namespace Tenisu.Infrastructure.Common;
 
 public class JsonParser
 {
-    private  readonly string _jsonFilePath = "../Tenisu.Infrastructure/Persistence/headtohead.json";
+    private readonly string _jsonFilePath;
+
+    public JsonParser(string jsonFilePath)
+    {
+        _jsonFilePath = jsonFilePath;
+    }
 
     public async Task<ErrorOr<PlayersList>> ParseDataJsonFile()
     {
         if (!File.Exists(_jsonFilePath))
         {
             {
+                Console.WriteLine("Json file not found {0}", _jsonFilePath);
+                Console.WriteLine($"Current directory: {Directory.GetCurrentDirectory()}");
                 return  Error.NotFound();
             }
         }
