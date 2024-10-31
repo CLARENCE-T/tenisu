@@ -1,0 +1,2 @@
+GET http://localhost:5032/api/players
+Content-Type: application/json
