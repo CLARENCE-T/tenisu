@@ -1,0 +1,2 @@
+GET http://localhost:5032/api/statistics/mixed-statistics
+Content-Type: application/json
