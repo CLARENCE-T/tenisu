@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{33932683-B28F-4BBF-BA03-4C66613FD3EE}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tenisu.Domain", "src\Tenisu.Domain\Tenisu.Domain.csproj", "{48A840AE-EE7D-4E2F-9429-C6B75416EC33}"
